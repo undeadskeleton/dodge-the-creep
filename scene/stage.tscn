@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqk2cs6euubkr"]
+
+[ext_resource type="PackedScene" uid="uid://c3k1bhtefwo3u" path="res://scene/joystic_ui.tscn" id="1_c1lbh"]
+[ext_resource type="PackedScene" uid="uid://5ep502emkla4" path="res://scene/player.tscn" id="2_svt74"]
+
+[node name="Stage" type="Node2D" unique_id=1110220086]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1046246629]
+position = Vector2(236, 363)
+
+[node name="Joystick" parent="Camera2D" unique_id=1378002281 instance=ExtResource("1_c1lbh")]
+position = Vector2(16, 255)
+
+[node name="player" parent="." unique_id=1805065723 node_paths=PackedStringArray("joystick") instance=ExtResource("2_svt74")]
+joystick = NodePath("../Camera2D/Joystick")

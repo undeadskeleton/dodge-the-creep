@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://tjmalwyx24ke" path="res://assets/dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/art/playerGrey_walk1.png" id="1_fvtld"]
 [ext_resource type="Texture2D" uid="uid://b3b45ciabut1v" path="res://assets/dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/art/playerGrey_up2.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://bvqsx3h4hcgs2" path="res://assets/dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/art/playerGrey_walk2.png" id="3_s4jxa"]
-[ext_resource type="PackedScene" uid="uid://c3k1bhtefwo3u" path="res://scene/joystic_ui.tscn" id="5_s4jxa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gyc6d"]
 animations = [{
@@ -35,16 +34,13 @@ animations = [{
 radius = 23.0
 height = 66.0
 
-[node name="player" type="Area2D" unique_id=1403328880]
+[node name="player" type="CharacterBody2D" unique_id=1805065723]
 script = ExtResource("1_ct4mp")
-metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=449570523]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=477217082]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gyc6d")
 animation = &"up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460013648]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=584222320]
 shape = SubResource("CapsuleShape2D_g7b7a")
-
-[node name="Joystic_UI" parent="." unique_id=21168633 instance=ExtResource("5_s4jxa")]

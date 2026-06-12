@@ -5,23 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://c71n150periiq" path="res://assets/joystick assets/joystick_tip.png" id="3_bga50"]
 [ext_resource type="Script" uid="uid://cn3ve5u01mats" path="res://scripts/knob.gd" id="4_plurx"]
 
-[node name="Joystic_UI" type="CanvasLayer" unique_id=21168633]
-
-[node name="Joystick" type="Node2D" parent="." unique_id=1447081570]
-position = Vector2(146, 585)
+[node name="Joystick" type="Node2D" unique_id=1378002281]
 script = ExtResource("1_be7k1")
 
-[node name="Ring" type="Sprite2D" parent="Joystick" unique_id=1841555004]
+[node name="Ring" type="Sprite2D" parent="." unique_id=1375766424]
 texture = ExtResource("2_3the4")
 
-[node name="Knob" type="Sprite2D" parent="Joystick" unique_id=2008712570]
-scale = Vector2(0.6, 0.6)
+[node name="Knob" type="Sprite2D" parent="." unique_id=1534742421 node_paths=PackedStringArray("parent")]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_bga50")
 script = ExtResource("4_plurx")
+parent = NodePath("..")
 
-[node name="Button" type="Button" parent="Joystick" unique_id=975723236]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Button" type="Button" parent="." unique_id=1941501836]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -101.0
+offset_top = -100.0
+offset_right = 103.0
+offset_bottom = 101.0
 
-[connection signal="button_down" from="Joystick/Button" to="Joystick/Knob" method="_on_button_button_down"]
-[connection signal="button_up" from="Joystick/Button" to="Joystick/Knob" method="_on_button_button_up"]
+[connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]

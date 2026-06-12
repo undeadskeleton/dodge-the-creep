@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://voalamv64oak"]
+
+[ext_resource type="PackedScene" uid="uid://c3k1bhtefwo3u" path="res://scene/joystic_ui.tscn" id="1_dtegs"]
+
+[node name="Joystick_UI" type="CanvasLayer" unique_id=64994867]
+
+[node name="Joystick" parent="." unique_id=1378002281 instance=ExtResource("1_dtegs")]
+position = Vector2(209, 618)
