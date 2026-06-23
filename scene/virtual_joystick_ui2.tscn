@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bpjx111k1xumo"]
+
+[ext_resource type="Script" uid="uid://b2jk43t66boo8" path="res://scripts/joystick2.gd" id="1_53vle"]
+[ext_resource type="Texture2D" uid="uid://dsagg7upty8v1" path="res://assets/joystick assets/joystick_base_outline.png" id="2_sl8mj"]
+[ext_resource type="Texture2D" uid="uid://c71n150periiq" path="res://assets/joystick assets/joystick_tip.png" id="3_780cc"]
+[ext_resource type="Script" uid="uid://bp7a8fgxewuad" path="res://scripts/knob2.gd" id="4_sf1tb"]
+
+[node name="Virtual_Joystick_UI" type="CanvasLayer" unique_id=491501727]
+
+[node name="Joystick" type="Node2D" parent="." unique_id=260708328]
+position = Vector2(215, 571)
+script = ExtResource("1_53vle")
+
+[node name="Ring" type="Sprite2D" parent="Joystick" unique_id=133038450]
+texture = ExtResource("2_sl8mj")
+
+[node name="Knob" type="Sprite2D" parent="Joystick" unique_id=1061108651 node_paths=PackedStringArray("parent")]
+texture = ExtResource("3_780cc")
+script = ExtResource("4_sf1tb")
+parent = NodePath("..")
+
+[node name="Button" type="Button" parent="Joystick" unique_id=1007292677]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -103.0
+offset_top = -101.0
+offset_right = 101.0
+offset_bottom = 101.0
+
+[connection signal="button_down" from="Joystick/Button" to="Joystick/Knob" method="_on_button_button_down"]
+[connection signal="button_up" from="Joystick/Button" to="Joystick/Knob" method="_on_button_button_up"]

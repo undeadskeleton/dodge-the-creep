@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://0elfmduswbma"]
+
+[ext_resource type="PackedScene" uid="uid://bpjx111k1xumo" path="res://scene/virtual_joystick_ui2.tscn" id="1_pe7l5"]
+[ext_resource type="PackedScene" uid="uid://b5cxb5lvjhhv4" path="res://scene/player_2.tscn" id="2_5xqip"]
+
+[node name="stage2" type="Node2D" unique_id=613055224]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1851492066]
+position = Vector2(236, 359)
+
+[node name="Virtual_Joystick_UI" parent="Camera2D" unique_id=491501727 instance=ExtResource("1_pe7l5")]
+
+[node name="player2" parent="." unique_id=1730125497 instance=ExtResource("2_5xqip")]
+position = Vector2(164, 128)

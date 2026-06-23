@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5cxb5lvjhhv4"]
+
+[ext_resource type="Texture2D" uid="uid://bvqsx3h4hcgs2" path="res://assets/dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/art/playerGrey_walk2.png" id="1_fuydg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g7b7a"]
+radius = 53.0
+height = 150.0
+
+[node name="player2" type="CharacterBody2D" unique_id=1730125497]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=683664619]
+texture = ExtResource("1_fuydg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1663159667]
+position = Vector2(-1, -13)
+shape = SubResource("CapsuleShape2D_g7b7a")
