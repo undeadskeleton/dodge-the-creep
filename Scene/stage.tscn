@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://clmfycsbir3ya"]
+
+[ext_resource type="Script" uid="uid://8eb7trar88kd" path="res://Script/stage.gd" id="1_hv6bi"]
+[ext_resource type="PackedScene" uid="uid://cdua2clyoobbs" path="res://Scene/player.tscn" id="2_g8kqj"]
+[ext_resource type="PackedScene" uid="uid://rb5sc5slmf5h" path="res://Scene/mob.tscn" id="2_olu4q"]
+
+[sub_resource type="Curve2D" id="Curve2D_olu4q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Stage" type="Node" unique_id=611799549]
+script = ExtResource("1_hv6bi")
+mob_scene = ExtResource("2_olu4q")
+
+[node name="Player" parent="." unique_id=1574050245 instance=ExtResource("2_g8kqj")]
+visible = false
+
+[node name="MobTimer" type="Timer" parent="." unique_id=1612540967]
+unique_name_in_owner = true
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1689424768]
+unique_name_in_owner = true
+
+[node name="StartTimer" type="Timer" parent="." unique_id=235057760]
+unique_name_in_owner = true
+process_priority = 240
+process_physics_priority = 360
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=218617264]
+
+[node name="MobPath" type="Path2D" parent="." unique_id=1595720972]
+curve = SubResource("Curve2D_olu4q")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=179997370]
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

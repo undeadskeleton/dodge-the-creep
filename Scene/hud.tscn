@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ter7sam0626k"]
+
+[node name="HUD" type="CanvasLayer" unique_id=395318581]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=795480247]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Message" type="Label" parent="." unique_id=1526233295]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StartButton" type="Button" parent="." unique_id=1346001627]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=641372985]
