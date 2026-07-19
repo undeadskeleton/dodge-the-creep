@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cqnve2npe6rf7"]
+
+[ext_resource type="PackedScene" uid="uid://cdua2clyoobbs" path="res://Scene/player.tscn" id="1_wqv7g"]
+[ext_resource type="PackedScene" uid="uid://u7cr8ijjyxb" path="res://Scene/joystick.tscn" id="2_w5jy8"]
+
+[node name="Test_Scene" type="Node2D" unique_id=910237380]
+
+[node name="Player" parent="." unique_id=1574050245 instance=ExtResource("1_wqv7g")]
+position = Vector2(162, 157)
+
+[node name="Joystick" parent="." unique_id=589687571 instance=ExtResource("2_w5jy8")]
+position = Vector2(230, 552)
