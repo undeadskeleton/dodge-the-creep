@@ -34,5 +34,13 @@ text = "False"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Debugger2" type="Label" parent="." unique_id=963355925]
+unique_name_in_owner = true
+offset_left = -221.0
+offset_top = -222.0
+offset_right = -120.0
+offset_bottom = -177.0
+theme_override_font_sizes/font_size = 12
+
 [connection signal="button_down" from="Button" to="knob" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="knob" method="_on_button_button_up"]
