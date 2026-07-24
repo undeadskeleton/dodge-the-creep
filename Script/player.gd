@@ -2,6 +2,7 @@ extends Area2D
 
 signal hit
 
+@export var virtual_joystick_input : VirJoystick
 @export var speed : int  = 400
 var screen_size : Vector2
 
@@ -13,13 +14,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") or (virtual_joystick_input.posVector.x > 0):
 		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left") or (virtual_joystick_input.posVector.x < 0):
 		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("move_down") or (virtual_joystick_input.posVector.y > 0):
 		velocity.y +=1
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("move_up") or (virtual_joystick_input.posVector.y < 0):
 		velocity.y -= 1
 	
 	if velocity.length() > 0:

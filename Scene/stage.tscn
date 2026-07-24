@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cdua2clyoobbs" path="res://Scene/player.tscn" id="2_g8kqj"]
 [ext_resource type="PackedScene" uid="uid://rb5sc5slmf5h" path="res://Scene/mob.tscn" id="2_olu4q"]
 [ext_resource type="PackedScene" uid="uid://ter7sam0626k" path="res://Scene/hud.tscn" id="4_olu4q"]
+[ext_resource type="PackedScene" uid="uid://u7cr8ijjyxb" path="res://Scene/joystick.tscn" id="4_trq58"]
 
 [sub_resource type="Curve2D" id="Curve2D_olu4q"]
 _data = {
@@ -15,8 +16,12 @@ point_count = 5
 script = ExtResource("1_hv6bi")
 mob_scene = ExtResource("2_olu4q")
 
-[node name="Player" parent="." unique_id=1574050245 instance=ExtResource("2_g8kqj")]
-visible = false
+[node name="Player" parent="." unique_id=1574050245 node_paths=PackedStringArray("virtual_joystick_input") instance=ExtResource("2_g8kqj")]
+position = Vector2(240, 580)
+virtual_joystick_input = NodePath("../Joystick")
+
+[node name="Joystick" parent="." unique_id=589687571 instance=ExtResource("4_trq58")]
+position = Vector2(240, 580)
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1612540967]
 unique_name_in_owner = true
